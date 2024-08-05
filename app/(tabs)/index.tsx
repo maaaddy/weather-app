@@ -4,6 +4,8 @@ import { StyleSheet, TextInput, Button, ActivityIndicator, Keyboard } from 'reac
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
+
+
 export default function TabOneScreen() {
   const [zipCode, setZipCode] = useState('');
   const [weather, setWeather] = useState(null);
