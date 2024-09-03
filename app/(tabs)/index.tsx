@@ -51,9 +51,12 @@ export default function TabOneScreen() {
       ) : (
         weather && (
           <View style={styles.weatherInfo}>
-            <Text style={styles.title}>Weather in {weather.location.name}, {weather.location.region}:</Text>
+            <Text style={styles.title}>Conditions in {weather.location.name}, {weather.location.region}:</Text>
+            <Text style={styles.weatherText2}>Last updated: {weather.current.last_updated}</Text>
             <Text style={styles.weatherText}>Temperature: {weather.current.temp_f}°F</Text>
             <Text style={styles.weatherText}>Condition: {weather.current.condition.text}</Text>
+            <Text style={styles.weatherText}>Wind: {weather.current.wind_mph} mph, {weather.current.wind_dir}</Text>
+            <Text style={styles.weatherText}>UV Index: {weather.current.uv}</Text>
           </View>
         )
       )}
@@ -102,6 +105,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginVertical: 5,
     fontWeight: 'bold',
+    alignItems: 'center',
+    padding: 5,
+  },
+  weatherText2: {
+    fontSize: 16,
+    marginVertical: 5,
     alignItems: 'center',
     padding: 5,
   },

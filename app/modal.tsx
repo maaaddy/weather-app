@@ -9,7 +9,10 @@ export default function ModalScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Information</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.textbox}>Eventually some information about the app will be put in this area here.</Text>
+      <Text style={styles.textbox}>Weatherly is an app I'm developing as a way to see where I stand 
+        "sink or swim" wise before my senior project coming up in Spring 2024. \n\n
+        I hope to learn 
+      </Text>
       <EditScreenInfo path="app/modal.tsx" />
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}
