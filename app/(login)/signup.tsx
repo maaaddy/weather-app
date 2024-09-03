@@ -19,6 +19,13 @@ export default function SignUp() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    // Reset the fields whenever the component is mounted or re-rendered
+    setUsername('');
+    setPassword('');
+  }, []);
+  
+
   const handleSignUp = () => {
     // In the future, check here if it's a valid username/password combo.
     if (username && password) {

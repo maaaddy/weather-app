@@ -32,50 +32,6 @@ function TabBarIcon(props: {
 
 const screenStack = createNativeStackNavigator();
 
-// export default function screenOrder() {
-//   const colorScheme = useColorScheme();
-
-//       // <screenStack.Navigator>
-//       //   <screenStack.Screen name="Login" component={LogInSignUp} />
-//       //   <screenStack.Screen name="Tabs" component={TabsScreen} />
-//       // </screenStack.Navigator>
-
-//   return (
-//       <screenStack.Navigator initialRouteName="Tabs">
-//         <screenStack.Screen name="Login" component={LogInSignUp} />
-//         <screenStack.Screen name="Tabs" component={TabsScreen} />
-//       </screenStack.Navigator>
-//   );
-// }
-// export default function LogInSignUp(){
-//   const colorScheme = useColorScheme();
-
-//   return (
-//     <Tabs
-//       screenOptions={{
-//         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-//         // Disable the static render of the header on web
-//         // to prevent a hydration error in React Navigation v6.
-//         headerShown: useClientOnlyValue(false, true),
-//       }}>
-//       <Tabs.Screen
-//         name="login"
-//         options={{
-//           title: 'Log In',
-//           tabBarIcon: ({ color }) => <FontAwesome6 name="cloud-sun-rain" size={24} color={color} />,
-//         }}
-//       />
-//       <Tabs.Screen
-//         name="signup"
-//         options={{
-//           title: 'Sign Up',
-//           tabBarIcon: ({ color }) => <FontAwesome5 name="map-marker-alt" size={24} color={color} />,
-//         }}
-//       />
-//     </Tabs>
-//   );
-// }
-
 export default function TabsScreen() {
   const colorScheme = useColorScheme();
 
@@ -122,8 +78,8 @@ export default function TabsScreen() {
       <Tabs.Screen
         name="three"
         options={{
-          title: 'Third',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
           //tabBarIcon: ({ color }) => <FontAwesome5 name="map-marker-alt" size={24} color="black" />,
         }}
       />

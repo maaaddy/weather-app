@@ -20,7 +20,14 @@ export default function LoginPage() {
     
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-  
+
+    useEffect(() => {
+      // Reset the fields whenever the component is mounted or re-rendered
+      console.log('LoginPage component mounted or re-rendered');
+      setUsername('');
+      setPassword('');
+    }, []);
+    
     const handleLogin = () => {
       // In the future, check here if it's a valid username/password combo.
       if (username && password) {

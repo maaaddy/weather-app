@@ -1,16 +1,21 @@
-import { StyleSheet } from 'react-native';
-
+import { StyleSheet, Button } from 'react-native';
+import { useRouter } from 'expo-router';
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
 export default function TabThreeScreen() {
+  const router = useRouter();
+
+  const logout = async () => {
+    router.replace('/(login)/login');
+  };
+  
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This is the third tab.</Text>
+      <Text style={styles.title}>User Information</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.textbox}>Here's a list of the different things I want to do: 
-      Add profiles on tab #3, Add list of fav locations + weather info on tab #1, add a weather map 
-      which is centered around user's selected area possibly on tab #2</Text>
+      <Button title="Logout" onPress={logout} />
+      <Text style={styles.textbox}>Logout Button needs to go on this screen.</Text>
       <EditScreenInfo path="app/(tabs)/three.tsx" />
     </View>
   );

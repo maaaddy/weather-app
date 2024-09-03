@@ -45,7 +45,7 @@ export default function TabOneScreen() {
         onChangeText={setZipCode}
         keyboardType="default"
       />
-      <Button title="Get Weather" onPress={fetchWeather} />
+      <Button title="Get Weather" onPress={fetchWeather}/>
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
@@ -58,7 +58,7 @@ export default function TabOneScreen() {
         )
       )}
       <Text style={styles.textbox}>Maybe I can add more weather information somewhere around here.</Text>
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <EditScreenInfo path="app/(tabs)/index.tsx"/>
     </View>
   );
 }
