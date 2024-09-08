@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, TextInput, Button, ActivityIndicator, Keyboard } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
+
 import { Text, View } from '@/components/Themed';
 
 // These are for the navigation of the app. This part is experimental.
