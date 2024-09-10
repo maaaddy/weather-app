@@ -13,6 +13,8 @@ import { useRouter } from 'expo-router';
 // This one is for the bottom tab navigation
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import { styles } from '../../app/styles.js';
+
 export default function SignUp() {
   const navigation = useNavigation();
   const router = useRouter();
@@ -57,7 +59,7 @@ export default function SignUp() {
     </View>
   );
 }
-
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -100,4 +102,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 5,
   },
-});
+});*/

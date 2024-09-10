@@ -3,6 +3,8 @@ import { useRouter } from 'expo-router';
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
+import { styles } from '../../app/styles.js';
+
 export default function TabThreeScreen() {
   const router = useRouter();
 
@@ -20,7 +22,7 @@ export default function TabThreeScreen() {
     </View>
   );
 }
-
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -44,4 +46,4 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
-});
+}); */

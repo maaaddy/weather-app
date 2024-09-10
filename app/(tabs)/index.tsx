@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, TextInput, Button, ActivityIndicator, Keyboard } from 'react-native';
+import { TextInput, Button, ActivityIndicator, Keyboard } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
+import { styles } from '../../app/styles.js';
 
+//console.log(process.env);
+//const API = process.env.REACT_APP_API_KEY;
 
 export default function TabOneScreen() {
   const [zipCode, setZipCode] = useState('');
@@ -15,7 +18,14 @@ export default function TabOneScreen() {
   const fetchWeather = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=b753fca42c7f46528ba182432243105&q=${zipCode}&aqi=yes`);
+      const response = await fetch('http://localhost:3000/getWeather', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ zipCode }),
+      });
+      
       const data = await response.json();
       if (data && data.current) {
         setWeather(data);
@@ -65,7 +75,7 @@ export default function TabOneScreen() {
     </View>
   );
 }
-
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -114,4 +124,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 5,
   },
-});
+});*/

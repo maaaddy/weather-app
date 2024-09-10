@@ -18,6 +18,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // This one is for the bottom tab navigation
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import { styles } from '../../app/styles.js';
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -85,7 +87,7 @@ export default function TabsScreen() {
       />
     </Tabs>
   );
-}
+} /*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -128,4 +130,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 5,
   },
-});
+});*/

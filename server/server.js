@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 dotenv.config();
+const API = process.env.API_KEY;
 const url = process.env.MONGO_DB_URL;
 const dbName = process.env.MONGO_DB;
 const collectionName = process.env.MONGO_DB_COLLECTION;
@@ -21,7 +22,24 @@ app.get('/users', async (_req, res) => {
       const collection = db.collection(collectionName);
       const userInfo = await collection.find({}).toArray();
       res.json(userInfo);
-  } catch (err) {
+  } 
+  catch (err) {
+      console.error("Error:", err);
+      res.status(500).send("Hmmm, something smells... No data for you!");
+  }
+});
+
+app.post('/getWeather', async (_req, res) => {
+  try {
+      const {zipCode} = _req.body;
+      console.log(zipCode);
+      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API}&q=${zipCode}&aqi=yes`);
+      console.log(response);
+      
+      const data = await response.json(); // Parse the JSON response
+      res.json(data);
+  } 
+  catch (err) {
       console.error("Error:", err);
       res.status(500).send("Hmmm, something smells... No data for you!");
   }

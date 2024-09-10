@@ -11,8 +11,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //Using this instead of navigate since the file we're looking for is in another folder outside of (login)
 import { useRouter } from 'expo-router';
+
 // This one is for the bottom tab navigation
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { styles } from '../../app/styles.js';
 
 export default function LoginPage() {
 
@@ -61,6 +64,7 @@ export default function LoginPage() {
     );
   }
 
+  /*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -104,3 +108,4 @@ const styles = StyleSheet.create({
     padding: 5,
   },
 });
+*/

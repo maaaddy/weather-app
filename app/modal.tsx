@@ -4,6 +4,8 @@ import { Platform, StyleSheet } from 'react-native';
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
+import { styles } from '../app/styles.js';
+
 export default function ModalScreen() {
   return (
     <View style={styles.container}>
@@ -21,7 +23,7 @@ export default function ModalScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
@@ -43,4 +45,4 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
-});
+});*/
