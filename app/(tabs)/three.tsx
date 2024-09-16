@@ -22,28 +22,3 @@ export default function TabThreeScreen() {
     </View>
   );
 }
-/*
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    padding: 20,
-    //justifyContent: 'center',
-  },
-  textbox: {
-    flex: 1,
-    alignItems: 'center',
-    padding: 20,
-    fontSize: 16,
-    //justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-}); */

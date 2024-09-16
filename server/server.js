@@ -21,6 +21,10 @@ app.get('/users', async (_req, res) => {
       const db = client.db(dbName);
       const collection = db.collection(collectionName);
       const userInfo = await collection.find({}).toArray();
+      
+      // Close the MongoDB connection
+      await client.close();
+
       res.json(userInfo);
   } 
   catch (err) {
@@ -42,6 +46,37 @@ app.post('/getWeather', async (_req, res) => {
   catch (err) {
       console.error("Error:", err);
       res.status(500).send("Hmmm, something smells... No data for you!");
+  }
+});
+
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+
+    const user = await collection.findOne({ username });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (password !== user.password) {
+      return res.status(401).json({ message: 'Invalid password' });
+    }
+
+    // Close the MongoDB connection
+    await client.close();
+
+    // Return success if login is valid
+    res.status(200).json({ message: 'Login successful' });
+    
+  } 
+  catch (err) {
+    console.error("Error:", err);
+    res.status(500).send("Hmmm, something smells... No data for you!");
   }
 });
 
